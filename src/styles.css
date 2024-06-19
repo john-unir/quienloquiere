@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background-color: #F5F5DC;
+  color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+body h1, body .h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #228B22;
+}
+
+body h2, body .h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #228B22;
+}
+
+body h3, body .h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #303030;
+}
+
+body h4, body .h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #303030;
+}
+
+body p, body .p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #303030;
+}
+
+/*# sourceMappingURL=styles.css.map */

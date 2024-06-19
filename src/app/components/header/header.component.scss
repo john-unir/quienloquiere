@@ -1,0 +1,105 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+@import '../../../_variables';
+.search-bar {
+
+  .form-control {
+    border-radius: 30px;
+
+    border: 2px solid $secondary-color;
+    height: 50px;
+    padding-left: 20px;
+    box-shadow: none;
+    outline: none;
+    &:focus {
+      box-shadow: none;
+      border-color: #32cd32;
+    }
+  }
+
+  .input-group-append {
+    .input-group-text {
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 30px 30px 0;
+      border: 2px solid $secondary-color;
+      height: 50px;
+      padding: 0 15px;
+
+    }
+  }
+  .fas {
+    color: green;
+    font-size: 25px;
+    transform: translateX(-48px) !important;
+  }
+  .fas:hover {
+    color: $secondary-color;
+  }
+
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+
+  .fa-user {
+    font-size: 1.5rem;
+  }
+}
+
+.btn-danger {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 11px;
+  margin-right: 10px;
+}
+
+.register-sesion {
+  width: 200px;
+
+}
+
+.inicio-sesion {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 160px;
+  font-size: 1rem;
+
+}
+
+.registro-text {
+  display: flex;
+  justify-content: center !important;
+}
+.inicio-sesion {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  .fa-user {
+    color: $primary-color;
+  }
+}
+
+
+
+.inicio-sesion:hover {
+  color: white;
+  background-color: $primary-color;
+  .fa-user {
+    color: white;
+
+  }
+}
+

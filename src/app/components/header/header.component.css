@@ -1,0 +1,130 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background-color: #F5F5DC;
+  color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+body h1, body .h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #228B22;
+}
+
+body h2, body .h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #228B22;
+}
+
+body h3, body .h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #303030;
+}
+
+body h4, body .h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #303030;
+}
+
+body p, body .p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #303030;
+}
+
+.search-bar .form-control {
+  border-radius: 30px;
+  border: 2px solid #87CEEB;
+  height: 50px;
+  padding-left: 20px;
+  box-shadow: none;
+  outline: none;
+}
+.search-bar .form-control:focus {
+  box-shadow: none;
+  border-color: #32cd32;
+}
+.search-bar .input-group-append .input-group-text {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 30px 30px 0;
+  border: 2px solid #87CEEB;
+  height: 50px;
+  padding: 0 15px;
+}
+.search-bar .fas {
+  color: green;
+  font-size: 25px;
+  transform: translateX(-48px) !important;
+}
+.search-bar .fas:hover {
+  color: #87CEEB;
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+.btn-outline-primary .fa-user {
+  font-size: 1.5rem;
+}
+
+.btn-danger {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 11px;
+  margin-right: 10px;
+}
+
+.register-sesion {
+  width: 200px;
+}
+
+.inicio-sesion {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 160px;
+  font-size: 1rem;
+}
+
+.registro-text {
+  display: flex;
+  justify-content: center !important;
+}
+
+.inicio-sesion {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid #228B22;
+  color: #228B22;
+}
+.inicio-sesion .fa-user {
+  color: #228B22;
+}
+
+.inicio-sesion:hover {
+  color: white;
+  background-color: #228B22;
+}
+.inicio-sesion:hover .fa-user {
+  color: white;
+}
+
+/*# sourceMappingURL=header.component.css.map */

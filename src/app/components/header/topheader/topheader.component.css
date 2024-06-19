@@ -1,0 +1,29 @@
+.top-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #228B22;
+  height: 64px;
+}
+
+.top-header a img {
+  height: 42px;
+  filter: brightness(700%);
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.top-header a .texto-top {
+  color: #fff;
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.top-header a:hover .texto-top {
+  color: #bdb5b5;
+  opacity: 1;
+}
+
+.top-header a:hover img {
+  filter: brightness(400%);
+}

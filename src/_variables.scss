@@ -1,0 +1,61 @@
+// Variables de colores
+$primary-color: #228B22;
+$secondary-color: #87CEEB;
+$background-color: #F5F5DC;
+$borders-color1: #025394;
+$text-color1: #303030;
+$text-color2: #fff;
+
+// Variables de fuentes
+$font-family: "Open Sans", sans-serif;
+$base-font-size: 16px;
+$heading-font-size-h1: 2.5rem;
+$heading-font-size-h2: 2rem;
+$heading-font-size-h3: 1.75rem;
+$heading-font-size-h4: 1.5rem;
+$paragraph-font-size: 1rem;
+
+// Variables de márgenes y padding
+$base-margin: 1rem;
+$base-padding: 1rem;
+
+// Estilos globales
+body {
+  font-family: $font-family;
+  font-size: $base-font-size;
+  background-color: $background-color;
+  color: $text-color1;
+  margin: 0;
+  padding: 0;
+}
+
+// Estilos para h1, h2, h3, h4, y p
+body h1, body .h1 {
+  font-size: $heading-font-size-h1;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+body h2, body .h2 {
+  font-size: $heading-font-size-h2;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+body h3, body .h3 {
+  font-size: $heading-font-size-h3;
+  font-weight: bold;
+  color: $text-color1;
+}
+
+body h4, body .h4 {
+  font-size: $heading-font-size-h4;
+  font-weight: bold;
+  color: $text-color1;
+}
+
+body p, body .p {
+  font-size: $paragraph-font-size;
+  line-height: 1.5;
+  color: $text-color1;
+}
