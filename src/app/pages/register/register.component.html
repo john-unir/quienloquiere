@@ -1,47 +1,31 @@
 
 <div class="container">
   <div class="row">
-     <form class="col-12 mt-5 mb-5  register">
+     <div class="col-12 mt-5 mb-5  register">
        <h2 class="mb-3">Registro</h2>
+
       <div class="col-12 col-md-6 mb-3">
-        <label for="validationCustom01" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="validationCustom01" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mb-3">
-        <label for="validationCustom02" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="validationCustom02" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mb-3">
-        <label for="validationCustomUsername" class="form-label">Nombre de usuario</label>
+        <label for="name" class="form-label">Nombre de usuario</label>
         <div class="input-group has-validation">
           <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
-          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+          <input type="text" class="form-control" id="name" aria-describedby="inputGroupPrepend">
           <div class="invalid-feedback">
             Por favor escribe un nombre de usuario.
           </div>
         </div>
       </div>
       <div class="mb-3 col-12 col-md-6">
-        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  required>
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">No compartiremos tu email sin tu consentimiento.</div>
       </div>
       <div class="mb-3 col-12 col-md-6">
-        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1"  required>
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1"  required>
-        <label class="form-check-label" for="exampleCheck1">Aceptas las políticas vigentes de tratamiento de datos: <a href="#">Política de tratamiento de datos</a> </label>
-      </div>
-      <button type="submit" class="btn btn-primary col-4 col-md-2">Enviar</button>
-    </form>
+
+      <button class="btn btn-primary col-4 col-md-2" (click)="createUser()">Enviar</button>
+    </div>
   </div>
 
 </div>

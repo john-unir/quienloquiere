@@ -8,3 +8,26 @@
 transform: scale(1.02);
   opacity: 1;
 }
+.mensaje {
+  padding: 20px;
+  background-color: #87CEEB;
+  border-radius: 20px;
+  transition: 300ms;
+}
+ .mensaje img {
+   height: 100px;
+ }
+
+ .mensaje h4 {
+   line-height: 50px;
+   text-align: center;
+   transition: 300ms;
+ }
+
+ .mensaje:hover {
+   background-color:#F5F5DC;
+ }
+
+.mensaje:hover h4 {
+  transform: scale(1.02);
+}
