@@ -14,6 +14,8 @@ export class ApiService {
   private statusUser =  this.apiUrl + 'user/login_status?_format=json';
   private exitUser =  this.apiUrl + 'user/logout?_format=json&token=';
   private newProduct = this.apiUrl + 'jsonapi/node/productos';
+  private deleteProduct =  this.apiUrl + 'jsonapi/node/productos/';
+
   private headers = new HttpHeaders({
     'Content-Type': 'application/vnd.api+json'
   });
@@ -26,12 +28,13 @@ export class ApiService {
     return this.http.post(this.validateUser, data, { headers: this.headers,withCredentials: true  });
   }
 
-  registerUserFunction(user:any,pass:any, email:any, avatar:any) {
+  registerUserFunction(user:any,pass:any, email:any, correo:any, avatar:any) {
     const dataTem = {
       type: "user--user",
       attributes: {
         name: user,
         mail: email,
+        field_correo: correo,
         pass: pass,
         status:1,
         field_avatar:avatar
@@ -75,5 +78,24 @@ console.log('logoutUserFunction');
     return this.http.post(this.newProduct, data, { headers: this.headersToken,withCredentials: true  });
 
   }
+
+  deleteProductos(nid: number) {
+    const username = localStorage.getItem('user');
+    const password =  localStorage.getItem('pass');
+    const token =  localStorage.getItem('csrf_token');
+    const base64Credentials = btoa(username + ':' + password);
+
+    if (token !== null) {
+      this.headersToken = new HttpHeaders({
+        'Authorization': 'Basic ' + base64Credentials,
+        'Content-Type': 'application/vnd.api+json',
+        'X-CSRF-Token': token
+      });
+    }
+    return this.http.delete(this.deleteProduct+nid, { headers: this.headersToken,withCredentials: true  });
+
+  }
+
+
 }
 

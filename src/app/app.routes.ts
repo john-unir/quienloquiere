@@ -6,6 +6,7 @@ import { LoginComponent } from "./pages/login/login.component";
 import { ProductDetailsComponent } from "./components/product-details/product-details.component";
 import { CreateComponent } from "./components/create/create.component";
 import { MyProductsComponent } from "./components/my-products/my-products.component";
+import { ResultsComponent } from "./components/results/results.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,7 +14,8 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'details/:id', component: ProductDetailsComponent },
+  { path: 'details', component: ProductDetailsComponent },
   { path: 'crear', component: CreateComponent },
-  { path: 'my-products', component: MyProductsComponent }
+  { path: 'my-products', component: MyProductsComponent },
+  { path: 'results', component: ResultsComponent },
 ];

@@ -1,13 +1,21 @@
 <app-header></app-header>
+<app-buscar></app-buscar>
 <div class="container mt-5 mb-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-4">
-      <h2 class="mb-3">Nombre-Producto</h2>
-      <img  style="width: 300px; height: 500px; border-radius: 10px" src="./assets/img/productos/sarten.jpg">
-      <p class="title">Sartén</p>
-      <a href="#">Contacta con el donador</a>
-
-
+  <div class="row">
+    <div class="col-sm-3 mb-3">
+      <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ productDataTemp.title }}</h5>
+          <img [src]="'../../../assets/img/productos/' + transformCategory(productDataTemp.field_category) + '.webp'"
+               class="img-fluid mb-3">
+          <p class="card-text"><strong>Categoría:</strong> {{ productDataTemp.field_type }}</p>
+          <p class="card-text"><strong>Tipo:</strong> {{ productDataTemp.field_category }}</p>
+          <p class="card-text"><strong>Estado:</strong> {{ productDataTemp.field_estado }}</p>
+          <p class="card-text"><strong>Ciudad de origen:</strong> {{ productDataTemp.field_ciudad }}</p>
+          <p class="card-text"><strong>Descripción:</strong> {{ productDataTemp.field_description }}</p>
+          <p class="card-text">Contantame: {{productDataTemp.field_correo}}
+        </div>
+      </div>
     </div>
   </div>
 </div>

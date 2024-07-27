@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-buscar></app-buscar>
 <div class="bg-light py-5">
   <div class="container">
     <div class="row justify-content-center">
@@ -19,7 +20,7 @@
 
                   <div class="mb-3">
                     <label for="field_categoria" class="form-label">*Producto</label>
-                    <select id="field_categoria" name="field_categoria" [(ngModel)]="productData.field_categoria" required class="form-select">
+                    <select id="field_categoria" name="field_categoria" [(ngModel)]="productData.field_category" required class="form-select">
                       <option *ngFor="let item of filteredCategories" [value]="item">{{ item }}</option>
                     </select>
                   </div>

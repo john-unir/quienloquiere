@@ -4,16 +4,18 @@ import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
+import {BuscarComponent} from "../buscar/buscar.component";
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [
-    FormsModule,
-    RouterLink,
-    CommonModule,
-    HeaderComponent
-  ],
+    imports: [
+        FormsModule,
+        RouterLink,
+        CommonModule,
+        HeaderComponent,
+        BuscarComponent
+    ],
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
@@ -22,14 +24,14 @@ export class CreateComponent {
     title: string;
     field_description: string;
     field_ciudad: string;
-    field_categoria: string;
+    field_category: string;
     field_type: string;
     field_estado: string;
   } = {
     title: '',
     field_description: '',
     field_ciudad: '',
-    field_categoria: '',
+    field_category: '',
     field_type: '',
     field_estado: ''
   };

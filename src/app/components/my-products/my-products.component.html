@@ -1,8 +1,10 @@
 <app-header></app-header>
+<app-buscar></app-buscar>
 <div class="container mt-4">
   <div class="container my-4">
     <div class="mensaje d-flex flex-row align-items-center justify-content-between p-2 shadow-sm rounded">
-      <h4 class="mensaje-texto mb-0">“¡Dale una segunda vida a tus objetos! Regala lo que ya no necesitas y ayuda a construir un mundo más sostenible y solidario.”</h4>
+      <h4 class="mensaje-texto mb-0">“¡Dale una segunda vida a tus objetos! Regala lo que ya no necesitas y ayuda a
+        construir un mundo más sostenible y solidario.”</h4>
       <img src="assets/img/conejo.png" class="mensaje-imagen ms-3 rounded-circle">
     </div>
   </div>
@@ -12,16 +14,16 @@
       <div class="card shadow-sm h-100">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{ product.title }}</h5>
-          <img src="../../../assets/img/productos/{{product.field_categoria}}.webp" class="img-fluid mb-3">
+          <img [src]="'../../../assets/img/productos/' + transformCategory(product.field_category) + '.webp'"
+               class="img-fluid mb-3">
           <p class="card-text"><strong>Categoría:</strong> {{ product.field_type }}</p>
-          <p class="card-text"><strong>Tipo:</strong> {{ product.field_categoria }}</p>
+          <p class="card-text"><strong>Tipo:</strong> {{ product.field_category }}</p>
           <p class="card-text"><strong>Estado:</strong> {{ product.field_estado }}</p>
           <p class="card-text"><strong>Ciudad de origen:</strong> {{ product.field_ciudad }}</p>
           <p class="card-text"><strong>Descripción:</strong> {{ product.field_description }}</p>
-          <button class="btn btn-outline-danger mt-auto" [routerLink]="['/details', product.id]"><strong>Despublicar</strong></button>
+          <a class="btn btn-outline-danger mt-auto" (click)="delete(product.uuid)"><strong>Despublicar</strong></a>
         </div>
       </div>
     </div>
   </div>
 </div>
-

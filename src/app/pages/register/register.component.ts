@@ -16,7 +16,7 @@ export class RegisterComponent {
   private name: any;
   private pass: any;
   private email: any;
-  private avatar: any;
+  correo: any;
   private error: any;
 
   constructor(private quienloquiereApiService:ApiService, private router: Router) { }
@@ -25,8 +25,9 @@ export class RegisterComponent {
     this.name = (document.getElementById('name') as HTMLInputElement).value;
     this.pass = (document.getElementById('password') as HTMLInputElement).value;
     this.email = (document.getElementById('email') as HTMLInputElement).value;
-    console.log(this.name, this.email, this.pass);
-    this.quienloquiereApiService.registerUserFunction(this.name,this.pass,this.email,'' )
+    this.correo = (document.getElementById('email') as HTMLInputElement).value;
+
+    this.quienloquiereApiService.registerUserFunction(this.name,this.pass,this.email, this.correo,'')
       .subscribe(
         (data:any) => { // Success
           console.log(data)

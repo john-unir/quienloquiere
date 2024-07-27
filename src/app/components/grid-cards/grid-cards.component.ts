@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-grid-cards',
@@ -13,8 +13,18 @@ import {RouterLink} from "@angular/router";
 export class GridCardsComponent implements OnInit {
   products: any[] = [];
   readonly API = 'http://ec2-3-144-124-56.us-east-2.compute.amazonaws.com/backQuienloquiere/productosAll';
+  user: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+
+  transformCategory(category: any): string {
+    if (typeof category === 'string') {
+      return category.toLowerCase().replace(/\s+/g, '_');
+    }
+    return '';
+  }
+
 
   ngOnInit() {
     this.loadMovies();
@@ -32,10 +42,20 @@ export class GridCardsComponent implements OnInit {
         console.log(this.products);
       },
       error: (error) => {
-        console.error('Error loading the movies:', error);
+        console.error('Error loading products:', error);
       }
     });
   }
 
+  verDetalles(product: any) {
+    this.user = localStorage.getItem('user');
+    if(this.user){
+      localStorage.setItem('producto', JSON.stringify(product));
+      this.router.navigate(['/details']);
+    } else {
+      this.router.navigate(['/login']);
+    }
+
+  }
 }
 
