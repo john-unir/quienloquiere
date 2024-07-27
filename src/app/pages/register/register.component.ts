@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import {ApiService} from "../../api.service";
 import {Router} from "@angular/router";
 import {HeaderComponent} from "../../components/header/header.component";
-import {MenuComponent} from "../../components/menu/menu.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [
     HeaderComponent,
-    MenuComponent
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'

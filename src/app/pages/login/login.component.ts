@@ -4,7 +4,6 @@ import { ApiService } from "../../api.service";
 import {Router} from "@angular/router";
 import {NgIf} from "@angular/common";
 import {HeaderComponent} from "../../components/header/header.component";
-import {MenuComponent} from "../../components/menu/menu.component";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +13,6 @@ import {MenuComponent} from "../../components/menu/menu.component";
     ReactiveFormsModule,
     NgIf,
     HeaderComponent,
-    MenuComponent
   ],
   styleUrls: ['./login.component.css']
 })

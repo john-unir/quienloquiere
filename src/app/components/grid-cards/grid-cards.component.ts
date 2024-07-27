@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-grid-cards',
   templateUrl: './grid-cards.component.html',
   styleUrls: ['./grid-cards.component.css'],
   standalone: true,
-  imports: [HttpClientModule, CommonModule]
+  imports: [HttpClientModule, CommonModule, RouterLink]
 })
 export class GridCardsComponent implements OnInit {
-  movies: any[] = [];
-  readonly IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
-  readonly API = 'https://api.themoviedb.org/3';
+  products: any[] = [];
+  readonly API = 'http://ec2-3-144-124-56.us-east-2.compute.amazonaws.com/backQuienloquiere/productosAll';
 
   constructor(private http: HttpClient) {}
 
@@ -21,15 +21,15 @@ export class GridCardsComponent implements OnInit {
   }
 
   loadMovies() {
-    const path = '/movie/popular';
-    this.http.get<any>(`${this.API}${path}`, {
+    this.http.get<any>(`${this.API}`, {
       headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxM2I4Y2RjOWE1YzJjMDVhOWQ1MDEwY2IwNDliZGJjMyIsInN1YiI6IjY1Yjk2Yzk4OTBmY2EzMDE2MjA2NzI0OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.19XQpsHln1L_nz9EnGZsbWot4oYBWydeBo3FJH3D6Fk',
-        'Content-Type': 'application/json;charset=utf-8'
+        'Authorization': 'Basic ',
+        'Content-Type': 'application/json'
       }
     }).subscribe({
       next: (data) => {
-        this.movies = data.results;
+        this.products = data;
+        console.log(this.products);
       },
       error: (error) => {
         console.error('Error loading the movies:', error);
@@ -37,8 +37,5 @@ export class GridCardsComponent implements OnInit {
     });
   }
 
-  getImgUrl(path: string): string {
-    return `${this.IMG_BASE_URL}${path}`;
-  }
 }
 

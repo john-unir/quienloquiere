@@ -1,17 +1,34 @@
-<app-menu></app-menu>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Inicio</a>
+      </li>
 
-<div class="container">
-  <header class="row bg-white text-black p-3 d-flex justify-content-between">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about">Contacto</a>
+      </li>
 
 
-    <div class="col-12 col-lg-5 mb-3 mb-md-0">
-      <div class="search-bar d-flex align-items-center">
-        <input type="text" class="form-control" placeholder="Buscar...">
-        <i class="fas fa-search search-icon"></i>
-      </div>
+    </ul>
+    <div class="usuario-registrado dropdown p-2" *ngIf="user">
+      <h5 class="name-user dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ user }}
+      </h5>
+      <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+        <li class="nav-item" *ngIf="user">
+          <a class="dropdown-item nav-link enlace-menu-user" routerLink="/my-products">Mis Publicaciones</a>
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a class="dropdown-item nav-link enlace-menu-user " routerLink="/crear">Crear Producto</a>
+        </li>
+        <li>
+          <button class="dropdown-item enlace-menu-user cerrar-sesion" (click)="logoutUser()">Salir</button>
+        </li>
+      </ul>
     </div>
 
-    <div class="col-12 col-lg-3 d-flex flex-column align-items-md-end  mt-md-3" *ngIf="!user">
+    <div class="col-12 col-lg-3 d-flex flex-row  gap-2" *ngIf="!user">
       <a class="nav-link btn inicio-sesion btn-outline-primary btn-lg mb-2 d-flex align-items-center justify-content-between" routerLink="/login">
         <span>Inicia sesión</span>
         <i class="fas fa-user"></i>
@@ -20,5 +37,20 @@
         Regístrate
       </a>
     </div>
+
+
+
+  </div>
+
+</nav>
+<div class="container">
+  <header class="row bg-white text-black p-3 d-flex justify-content-between">
+    <div class="col-12 col-lg-5 mb-3 mb-md-0">
+      <div class="search-bar d-flex align-items-center">
+        <input type="text" class="form-control" placeholder="Buscar...">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+    </div>
+
   </header>
 </div>

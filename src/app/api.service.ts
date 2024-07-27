@@ -13,6 +13,7 @@ export class ApiService {
   private logoutUser =  this.apiUrl + 'user/logout';
   private statusUser =  this.apiUrl + 'user/login_status?_format=json';
   private exitUser =  this.apiUrl + 'user/logout?_format=json&token=';
+  private newProduct = this.apiUrl + 'jsonapi/node/productos';
   private headers = new HttpHeaders({
     'Content-Type': 'application/vnd.api+json'
   });
@@ -58,5 +59,21 @@ console.log('logoutUserFunction');
       return this.http.post<any>( this.logoutUser, {}, { headers, params ,withCredentials: true });
 
     }
+
+  createEventFunction(data: any){
+    const username = localStorage.getItem('user');
+    const password =  localStorage.getItem('pass');
+    const token =  localStorage.getItem('csrf_token');
+    const base64Credentials = btoa(username + ':' + password);
+    if (token !== null) {
+      this.headersToken = new HttpHeaders({
+        'Authorization': 'Basic ' + base64Credentials,
+        'Content-Type': 'application/vnd.api+json',
+        'X-CSRF-Token': token
+      });
+    }
+    return this.http.post(this.newProduct, data, { headers: this.headersToken,withCredentials: true  });
+
   }
+}
 

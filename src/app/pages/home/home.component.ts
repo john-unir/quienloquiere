@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "../../components/header/header.component";
-import {MenuComponent} from "../../components/menu/menu.component";
 import {GridCardsComponent} from "../../components/grid-cards/grid-cards.component";
 
 @Component({
@@ -8,7 +7,6 @@ import {GridCardsComponent} from "../../components/grid-cards/grid-cards.compone
   standalone: true,
   imports: [
     HeaderComponent,
-    MenuComponent,
     GridCardsComponent
   ],
   templateUrl: './home.component.html',

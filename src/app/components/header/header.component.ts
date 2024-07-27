@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterOutlet} from "@angular/router";
+import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {NgIf} from "@angular/common";
-import {MenuComponent} from "../menu/menu.component";
-
+import {ApiService} from "../../api.service";
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     RouterLink,
     NgIf,
-    MenuComponent,
     RouterOutlet
   ],
   templateUrl: './header.component.html',
@@ -17,8 +15,17 @@ import {MenuComponent} from "../menu/menu.component";
 })
 export class HeaderComponent {
   user: string | null;
-constructor() {
-  this.user = localStorage.getItem('user')
-  console.log(this.user)
-}
+  login: boolean | undefined;
+  constructor(private quienloquiereApiService:ApiService, private router: Router) {
+
+    this.user = localStorage.getItem('user');
+
+    console.log(this.user)
+  }
+  logoutUser() {
+    localStorage.clear();
+    this.user = localStorage.getItem('user');
+    this.router.navigate(['/']);
+    console.log (this.user)
+  }
 }

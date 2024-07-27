@@ -1,33 +1,73 @@
 .card {
-  transition: 300ms;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.9;
-
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
 }
 
 .card:hover {
-transform: scale(1.02);
+  transform: scale(1.02);
   opacity: 1;
 }
-.mensaje {
-  padding: 20px;
-  background-color: #87CEEB;
-  border-radius: 20px;
-  transition: 300ms;
+
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
- .mensaje img {
-   height: 100px;
- }
 
- .mensaje h4 {
-   line-height: 50px;
-   text-align: center;
-   transition: 300ms;
- }
+.mensaje {
+  background-color: #f5f8fa;
+  border: 2px solid #87CEEB;
+  border-radius: 1rem;
+  transition: 300ms ease-in-out;
+}
 
- .mensaje:hover {
-   background-color:#F5F5DC;
- }
 
-.mensaje:hover h4 {
-  transform: scale(1.02);
+.mensaje-texto {
+  font-size: 1.2rem; /* Ajuste de tamaño de fuente para mejor legibilidad */
+  color: #333; /* Color de texto más oscuro */
+}
+
+.mensaje-imagen {
+  width: 80px; /* Tamaño ajustado para imagen */
+  height: 80px;
+  object-fit: cover; /* Ajuste de la imagen dentro del contenedor */
+  border: 1px solid #87CEEB; /* Borde para la imagen */
+}
+
+.mensaje-imagen {
+  height: 100px;
+}
+
+.mensaje-texto {
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  transition: 300ms ease-in-out;
+}
+
+
+
+.mensaje:hover .mensaje-texto {
+  color: green;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  transform: scale(1.05);
+}
+
+.img-fluid {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  max-height: 300px;
 }
