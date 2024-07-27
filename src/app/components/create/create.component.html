@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title mb-4">Crear Producto</h3>
+            <form (ngSubmit)="newProduct()">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="field_type" class="form-label">*Tipo</label>
+                    <select id="field_type" name="field_type" [(ngModel)]="productData.field_type" (change)="onTypeChange()" required class="form-select">
+                      <option value="hogar">Hogar</option>
+                      <option value="oficina">Oficina</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="field_categoria" class="form-label">*Producto</label>
+                    <select id="field_categoria" name="field_categoria" [(ngModel)]="productData.field_categoria" required class="form-select">
+                      <option *ngFor="let item of filteredCategories" [value]="item">{{ item }}</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="field_estado" class="form-label">*Estado</label>
+                    <select id="field_estado" name="field_estado" [(ngModel)]="productData.field_estado" required class="form-select">
+                      <option value="nuevo">Nuevo</option>
+                      <option value="usado">Usado</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="title" class="form-label">*Título</label>
+                    <input type="text" id="title" [(ngModel)]="productData.title" name="title" required class="form-control">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="field_description" class="form-label">*Descripción</label>
+                    <textarea id="field_description" [(ngModel)]="productData.field_description" name="field_description" required class="form-control" rows="3"></textarea>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="field_ciudad" class="form-label">*Ciudad</label>
+                    <select type="text" id="field_ciudad" [(ngModel)]="productData.field_ciudad" name="field_ciudad" required class="form-select">
+                    <option *ngFor="let item of ciudadesCapitalesColombia" [value]="item">{{ item }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <p class="text-muted">Los campos marcados con * son obligatorios</p>
+              <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">Crear Producto</button>
+                <a class="btn btn-outline-secondary" routerLink="/home">Volver</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.mensaje {
+  background-color: #f5f8fa;
+  border: 2px solid #87CEEB;
+  border-radius: 1rem;
+  transition: 300ms ease-in-out;
+}
+
+
+.mensaje-texto {
+  font-size: 1.2rem; /* Ajuste de tamaño de fuente para mejor legibilidad */
+  color: #333; /* Color de texto más oscuro */
+}
+
+.mensaje-imagen {
+  width: 80px; /* Tamaño ajustado para imagen */
+  height: 80px;
+  object-fit: cover; /* Ajuste de la imagen dentro del contenedor */
+  border: 1px solid #87CEEB; /* Borde para la imagen */
+}
+
+.mensaje-imagen {
+  height: 100px;
+}
+
+.mensaje-texto {
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+  transition: 300ms ease-in-out;
+}
+
+
+
+
+.img-fluid {
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
