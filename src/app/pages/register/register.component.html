@@ -7,8 +7,8 @@
       <div class="col-12 col-md-6 mb-3">
         <label for="name" class="form-label">Nombre de usuario</label>
         <div class="input-group has-validation">
-          <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
-          <input type="text" class="form-control" id="name" aria-describedby="inputGroupPrepend">
+
+          <input type="text" class="form-control" id="name" aria-describedby="inputGroupPrepend" placeholder="nombre con el que iniciarás sesión">
           <div class="invalid-feedback">
             Por favor escribe un nombre de usuario.
           </div>
@@ -24,7 +24,7 @@
         <input type="password" class="form-control" id="password">
       </div>
 
-      <button class="btn btn-primary col-4 col-md-2" (click)="createUser()">Enviar</button>
+      <button class="btn btn-success col-4 col-md-2" (click)="createUser()">Enviar</button>
     </div>
   </div>
 
