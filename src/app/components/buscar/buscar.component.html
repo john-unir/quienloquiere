@@ -2,10 +2,9 @@
 <div class="container">
   <div class="row bg-white text-black p-3 d-flex justify-content-between">
     <div class="col-12 col-lg-5 mb-3 mb-md-0">
-      <div class="search-bar d-flex align-items-center">
+      <div class="search-bar d-flex align-items-center gap-2">
         <input [(ngModel)]="search" type="text" class="form-control" placeholder="Buscar..." />
-        <button class="btn btn-primary" (click)="buscar(search)">Buscar</button>
-        <i class="fas fa-search search-icon ml-2"></i>
+        <button class="btn btn-success" (click)="buscar(search)">Buscar</button>
       </div>
     </div>
 
